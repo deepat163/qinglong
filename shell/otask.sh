@@ -239,6 +239,10 @@ main() {
   fi
 
   if [[ $1 == *.js ]] || [[ $1 == *.py ]] || [[ $1 == *.pyc ]] || [[ $1 == *.sh ]] || [[ $1 == *.ts ]]; then
+    if [[ $1 == *.sh ]]; then
+      timeoutCmd=""
+    fi
+
     case $# in
     1)
       run_normal "$1"
